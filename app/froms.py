@@ -1,8 +1,9 @@
-from flask_wtf import Form
-from wtforms import StringField,BooleanField
-from wtforms.validators import DataRequired
+from flask.ext.wtf import FlaskForm
 
-class LoginForm(Form):
-    openid = StringField('openid', validators=[DataRequired()])
+from wtforms import TextField,BooleanField
+from wtforms.validators import Required
+
+class LoginForm(FlaskForm):
+    openid = TextField('openid', validators=[Required()])
     remember_me = BooleanField('remember_me', default=False)
     
